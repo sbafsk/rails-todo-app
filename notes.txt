@@ -39,3 +39,12 @@ as a security measure.
 as params[:id]
 - On the #update action we have to find the task in the database
 again because the object in @task does not persist across request.
+
+92.
+- The file for the form is called '_form.html.erb'. The underscore
+indicates that it's a partial, but when we render a partial 
+we don't include the underscore: `render 'form'`
+- The form partial goes in the 'views/tasks/' folder; if it was
+shared by multiple resources we could put it in 'views/application/`
+instead, and Rails would look there if it didn't fin the partials
+in 'tasks'.
