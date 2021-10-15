@@ -48,3 +48,11 @@ we don't include the underscore: `render 'form'`
 shared by multiple resources we could put it in 'views/application/`
 instead, and Rails would look there if it didn't fin the partials
 in 'tasks'.
+
+93.
+- As we see when we look at our routes, #destroy is not accessed
+with GET request, but by a DELETE request to the path for that task.
+- The different verbs/methods indicate different types of request
+to the server. GET simply request the resource at the target location.
+POST sends data to create a new resource. PUT/PATCH sends data to 
+update a resource, and DESTROY tells the server to delete the resource.
