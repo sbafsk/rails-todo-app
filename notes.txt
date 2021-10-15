@@ -81,3 +81,11 @@ schema of our database.
 schema has gone through.
 - They are reversible (if written correctly), so if we want, 
 we can roll back our databse to a previous schema.
+
+97.
+- Because the route was a simple GET request, all we had to 
+do was make a link to it, but the linked path had to include
+the boolean parameter, so we had to build up.
+- Because the checkbox was created with Rails view
+helper method, the return value is just HTML text, which
+mean it's fine to pass it to the link_to helper method.

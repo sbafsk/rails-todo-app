@@ -1,5 +1,9 @@
 <h3><%= link_to @task.title, task_path(@task) %></h3>
 <p><em><%= @task.detail %></em></p>    
+<p>Completed? 
+  <%= link_to check_box_tag(:task, :completed, @task.completed), 
+          "/tasks/#{@task.id}/complete/#{!@task.completed}" %>
+</p>   
 <%= link_to 'Edit', edit_task_path(@task) %> | 
 <%= link_to 'Delete', task_path(@task), method: :delete %>
 <br> <br>
