@@ -32,3 +32,10 @@ need a blank task object to pass to our form, we set `@task = Task.new`
 - #create actually saves the new task to the database. We have to
 whitelist our parameters `params.require(object).permit(fields)`
 as a security measure.
+
+91.
+- Notice that we can reuse the same form for #edit as we did for #new
+- When we go to 'task/:id/edit' the id from the path is available 
+as params[:id]
+- On the #update action we have to find the task in the database
+again because the object in @task does not persist across request.
