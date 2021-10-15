@@ -73,3 +73,11 @@ a couble of things will happen:
 render the 'new' page again instead of redirecting to the task list.
 - The task object stored in @task will receive some errors, which
 we can display at the top of the 'new' page when it re-renders.
+
+96.
+- ActiveRecord Migrations are used to modified the
+schema of our database.
+-They also act as a record of all the changes the 
+schema has gone through.
+- They are reversible (if written correctly), so if we want, 
+we can roll back our databse to a previous schema.
