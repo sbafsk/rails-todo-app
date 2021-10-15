@@ -1,0 +1,34 @@
+87.
+- >'rails generate controller welcome index' created 
+WelcomeController, an #index action/method on the
+controller, and set route for us.
+- Rails emphasizes "Convention over configuration", which
+mena that if we follow certain patterns, Rails will 
+do a lot of the work for us.
+
+88.
+- ERB sections of our view file are enclosed in triangle brackets
+and percentage signs, with or without an equals sign at the 
+beginning: <% :ruby_code %> or <%= :ruby_code %>
+- The equals sign means that the value of the ruby expression will
+be inserted in to the text output, otherwise the code gets invisibly.
+- Anything outside an embedded Ruby expression is just regular HTML.
+
+
+89.
+To manage tasks, we created:
+- a "Taks" model, which accesses a table in our database, "task".
+- a controller, "TaskController" which has a bunch of methods,
+which we call actions.
+- some view pages, with names which match controller actions.
+- routes which map paths to controller actions.
+
+90.
+- `form_for` is a Rails method which takes a model instance
+(@task) as an argument, and creates a form which submits
+attributes for that model.
+- the #new action just need to render the form page, but since we
+need a blank task object to pass to our form, we set `@task = Task.new`
+- #create actually saves the new task to the database. We have to
+whitelist our parameters `params.require(object).permit(fields)`
+as a security measure.
