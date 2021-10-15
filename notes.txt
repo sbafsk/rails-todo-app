@@ -56,3 +56,10 @@ with GET request, but by a DELETE request to the path for that task.
 to the server. GET simply request the resource at the target location.
 POST sends data to create a new resource. PUT/PATCH sends data to 
 update a resource, and DESTROY tells the server to delete the resource.
+
+94.
+- Just like the #edit action, the first thing #show needs to 
+do is find the right Task to display. Then it just renders the 
+view page.
+- The route for the show action is the same as destroy and 
+update, but with GET as the HTTP verb/method.
