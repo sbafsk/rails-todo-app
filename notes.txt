@@ -63,3 +63,13 @@ do is find the right Task to display. Then it just renders the
 view page.
 - The route for the show action is the same as destroy and 
 update, but with GET as the HTTP verb/method.
+
+95.
+- The validation is defined on our Task model, so it gets checked
+when we try to save a task to the database.
+- If the new task we're trying to save does not have a title,
+a couble of things will happen:
+- Te save method will return false, so the #create action will
+render the 'new' page again instead of redirecting to the task list.
+- The task object stored in @task will receive some errors, which
+we can display at the top of the 'new' page when it re-renders.
