@@ -96,3 +96,11 @@ same code in our rails console and get the same result.
 - If we have validations on our Task model, Then
 `Task.create(...)` will only save to the database if the
 attributes we pass in pass the validations.
+
+99.
+- When we generate a scaffold, we declare the model, and
+then rails just gives us all the standard controller actions,
+views, and routes.
+- Unlike before, the generated views and controller actions
+are already set up to do the basic CRUD actions.
+- We only need to do a bit of tweaking.
