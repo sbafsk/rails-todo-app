@@ -117,7 +117,7 @@ do it the other way around.
 `belongs_to :user`. Rails expects you to follow this pattern.
 
 101.
-- This sessions controller doesn't need a corresponding model,
+- This session controller doesn't need a corresponding model,
 because we're not saving anything to the database.
 - The session hash is stored on the server, and the server knows that
 my session info belongs to me because my browser sends a session
@@ -126,3 +126,13 @@ key along with each request.
 there is a limit on its size, but we can remember which User account
 belongs to a session by storing the user's ID in there. (We store the
 ID, not the whole user object.)
+
+102.
+- To make a method available in all our views, we define it in the
+AplicationHelper. (Similarly, whatever is in 
+'views/layouts/application.html.erb' will appear on every page.)
+- When the user logs in, we find the user and check taht their
+password matches the digest in our database. Then we set 
+`sessions[:user_id]` to the user's id. (Don't save the whole user object!)
+- To destroy the session (i.e. log out) we jst assign the
+:user_id key in session to nil.

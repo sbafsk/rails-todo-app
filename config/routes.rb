@@ -3,13 +3,13 @@ Rails.application.routes.draw do
   get 'welcome/index'
   root 'welcome#index'
 
-  resources :sessions, only: [:new, :create, :destroy]
+  resources :session, only: [:new, :create, :destroy]
 
-  get 'log_in', to: 'session#new'  
-  get 'log_out', to: 'session#destroy'
+  get 'login', to: 'session#new'  
+  get 'logout', to: 'session#destroy'
 
   resources :users
-  get 'sign_up', to: 'users#new'
+  get 'signup', to: 'users#new'
 
   resources :tasks
   get 'tasks/:id/complete/:completed', to: 'tasks#complete'
