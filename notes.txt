@@ -104,3 +104,14 @@ views, and routes.
 - Unlike before, the generated views and controller actions
 are already set up to do the basic CRUD actions.
 - We only need to do a bit of tweaking.
+
+100.
+# User has many task
+# A task belongs to a user
+- The relationship between users and task is a has-many/
+belongs-to relationship, or a "one-to-many association".
+- Because a task "belongs to" exactly one user, we add the
+user id as the "foreign key" to the task model. We can't 
+do it the other way around.
+- Pay attention to the pluralization of `has_many :task` vs.
+`belongs_to :user`. Rails expects you to follow this pattern.
