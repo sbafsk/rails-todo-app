@@ -2,7 +2,7 @@
 <h1>To Do: </h1>
 <h3> Current tasks: </h3>
 <ul>
-<% @task.each do |t| %>
+<% @tasks.each do |t| %>
   <li>
     <strong><%= link_to t.title, task_path(t) %></strong>
     <%= link_to check_box_tag(:task, :completed, t.completed), 

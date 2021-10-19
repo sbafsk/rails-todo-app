@@ -6,11 +6,12 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.create(username: "Peter", password: "elephant")
+peter = User.create(username: "peter", password: "123123")
+dave = User.create(username: "dave", password: "123123")
 
-Task.create(title: "Drop it like it's hot",
+peter.tasks.create(title: "Drop it like it's hot",
   detail: "whatever...")
 
-Task.create([{title: "Drop it like it's hot 1",
-detail: "whatever..."}, {title: "Drop it like it's hot 2",
+dave.tasks.create([{title: "Drop it like it's cold",
+detail: "whatever..."}, {title: "Drop it like it's freeze",
   detail: "whatever..."}])

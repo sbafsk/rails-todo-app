@@ -147,3 +147,34 @@ it doesn't find the view in the views folder for the current resources.
 of flash are 'notice' and 'alert'.
 - flash messages survive when you redirect, but the error messages belong to an
 ActiveRecord object, so they wouldn't survive between requests.
+
+
+104.
+- `@user.tasks` return an ActiveRecord collection object which represents
+the task belonging to @user, callin `.all` on that collection gives us an
+array-like object, just like Task.all would. The methods we can call on Task
+can also be called on the user-specific collection.
+- To make the current_user helper method available in our TaskController,
+we need to include the ApplicationHelper module in the controller.
+- Since the controllers all inherit from ApplicationController, including the
+helper in ApplicationController makes the current_user method available in
+all the controllers.
+
+105.
+- The before_action method is used to make the authorization methods into
+callbacks, meaning that they will get called at a later time; in this case,
+before the controller actions get carried out.
+- In order to access anything other that the home page, a user has to log in,
+and since our task are private, they have to be the owner of a task to see it,
+edit it, or delete it.
+- In places like #index and #create, because current_user determines which
+task ge shown or which user a task gets assigned to, we don't need to 
+confirm that we've got the right user.
+
+106.
+- I got rid of everything that I didn't use in this tutorial, but
+if you want to take this app and tinker with it, you might 
+want to add some of that stuff back.
+- Maybe you want to set up a bit more account 
+management, or create the ability for users to share task.
+Have fun!
